@@ -189,8 +189,8 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   int sec = 0;
-  int min = 0;
-  int hour = 0;
+  int min = 55;
+  int hour = 5;
   clearAllClock();
   while (1)
   {
@@ -208,7 +208,7 @@ int main(void)
 	  setNumberOnClock(sec / 5);
 	  setNumberOnClock(min / 5);
 	  setNumberOnClock(hour % 12);
-	  HAL_Delay(10);
+	  HAL_Delay(100);
 	  clearNumberOnClock(sec / 5);
 	  clearNumberOnClock(min / 5);
 	  clearNumberOnClock(hour % 12);
@@ -269,10 +269,10 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOA_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, LED_1|LED_2|LED_3|LED_4|LED_5|LED_6|LED_7|LED_8|LED_9|LED_10|LED_11, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, LED_0|LED_1|LED_2|LED_3|LED_4|LED_5|LED_6|LED_7|LED_8|LED_9|LED_10|LED_11, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : RED_LED_Pin */
-  GPIO_InitStruct.Pin = LED_1|LED_2|LED_3|LED_4|LED_5|LED_6|LED_7|LED_8|LED_9|LED_10|LED_11;
+  GPIO_InitStruct.Pin = LED_0|LED_1|LED_2|LED_3|LED_4|LED_5|LED_6|LED_7|LED_8|LED_9|LED_10|LED_11;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
